@@ -53,55 +53,103 @@
         </nav>
     </header>
     <!-- Fin encabezado con logo y navbar Bootstrap-->
-<!-- Inicio contenido principal-->
-<main>
-    <!--Inicio banner-->
-    <section>
-        <div class="banner">
-            <h2 class="titulo" >BABILONIA</h2>
-            <h3 class="subtitulo">Deco Natural</h3>
-            <a href="./pages/contacto.html">Contacto</a>
+    <!-- Inicio contenido principal-->
+    <main>
+        <!--Inicio banner-->
+        <section>
+            <div class="banner">
+                <h2 class="titulo">BABILONIA</h2>
+                <h3 class="subtitulo">Deco Natural</h3>
+                <a href="./pages/contacto.html">Contacto</a>
+            </div>
+            <!--Fin banner-->
+        </section>
+        <!--Inicio galería animada-->
+        <section>
+            <h2 class="muestras">MUESTRA DE PRODUCTOS</h2>
+            <div class="container">
+                <div class="productos">
+                    <div class="foto" data-aos="fade-up">
+                        <img src="./img/plantas.png" alt="">
+
+                    </div>
+                    <h3 class="descripcion">Plantas decorativas para el hogar, la oficina y más.</h3>
+                </div>
+                <div class="productos">
+                    <div class="foto" data-aos="fade-down">
+                        <img src="./img/macetas.jpg" alt="">
+                    </div>
+                    <h3 class="descripcion">Macetas de todo tipo de tamaño y material.</h3>
+                </div>
+                <div class="productos">
+                    <div class="foto" data-aos="fade-left">
+                        <img src="./img/macetero.jpg" alt="">
+                    </div>
+                    <h3 class="descripcion">Maceteros campestres, clásicos, modernos.</h3>
+                </div>
+                <div class="productos">
+                    <div class="foto" data-aos="fade-right">
+                        <img src="./img/riego.png" alt="">
+                    </div>
+                    <h3 class="descripcion">Variedad en artículos para el riego.</h3>
+                </div>
+                <div class="productos">
+                    <div class="foto" data-aos="fade-up">
+                        <img src="./img/abono.jpg" alt="">
+                    </div>
+                    <h3 class="descripcion">Tierra, abono, fertilizantes, plaguicidas.</h3>
+                </div>
+                <div class="productos">
+                    <div class="foto" data-aos="fade-up">
+                        <img src="./img/piedras.png" alt="">
+                    </div>
+                    <h3 class="descripcion">Piedras decorativas.</h3>
+                </div>
+            </div>
+        </section>
+        <!--Fin galería animada-->
+    </main>
+    <!-- Fin contenido principal-->
+    <!-- Inicio Footer -->
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <a class="top" href="#top"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                </li>
+                <li>
+                    <a class="whatsapp"
+                        href="https://api.whatsapp.com/send?phone=542215657734&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20System"
+                        target="_blank"><i class=" fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li>
+                    <a class="instagram" href="https://www.instagram.com/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a class="mail" href="mailto:babilonia_deconatural@gmail.com" target="_blank"><i
+                            class="fa-regular fa-envelope"></i></a>
+                </li>
+            </ul>
         </div>
-        <!--Fin banner-->
-    </section>
-</main>
-<!-- Fin contenido principal-->
-<!-- Inicio Footer -->
-<footer>
-    <div>
-        <ul>
-            <li>
-                <a class="top" href="#top"><i class="fas fa-arrow-alt-circle-up"></i></a>
-            </li>
-            <li>
-                <a class="whatsapp"
-                    href="https://api.whatsapp.com/send?phone=542215657734&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20System"
-                    target="_blank"><i class=" fa-brands fa-whatsapp"></i></a>
-            </li>
-            
-            <li>
-                <a class="instagram" href="https://www.instagram.com/" target="_blank"><i
-                        class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-                <a class="mail" href="mailto:babilonia_deconatural@gmail.com" target="_blank"><i
-                        class="fa-regular fa-envelope"></i></a>
-            </li>
-        </ul>
-    </div>
-    <p>161 e/ 69 y 70<br>
-        La Plata - Buenos Aires - Argentina<br>
-        Todos los derechos reservados - Babilonia
-    </p>
-    <img class="powered" src="./img/logocv.png" alt="logo desarrollo web">
-</footer>
-<!-- Fin footer -->
+        <p>161 e/ 69 y 70<br>
+            La Plata - Buenos Aires - Argentina<br>
+            Todos los derechos reservados - Babilonia
+        </p>
+        <img class="powered" src="./img/logocv.png" alt="logo desarrollo web">
+    </footer>
+    <!-- Fin footer -->
     <!-- Link Js Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <!-- Animate on scroll Js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
 </body>
 
 </html>
