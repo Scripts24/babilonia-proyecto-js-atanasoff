@@ -158,100 +158,75 @@ main {
     padding        : 3px 15px;
 }
 
-/*.....Galería AOS.....*/
+/*.....Galería con efectos.....*/
 
 .muestras {
-    text-align   : center;
-    margin-top   : 40px;
-    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.container {
-    width         : 80%;
-    max-width     : 1200px;
-    display       : flex;
-    flex-direction: column;
-    position      : relative;
-}
-
-.container::after {
-    content   : "";
-    width     : 2px;
-    height    : 100%;
-    background: #1b3231;
-    position  : absolute;
-    top       : 0;
-    left      : calc(50% - 1px);
-    z-index   : 1;
-}
-
-.productos {
+.container-muestras {
     display        : flex;
-    justify-content: space-between;
-    margin-bottom  : 80px;
-    position       : relative;
+    justify-content: space-around;
+    flex-wrap      : wrap;
+    padding-bottom : 40px;
 }
 
-.productos::after {
-    content      : "";
-    display      : block;
-    width        : 14px;
-    height       : 14px;
-    border-radius: 100px;
-    background   : #76A60F;
-    border       : 2px solid #1b3231;
-    position     : absolute;
-    z-index      : 2;
-    top          : calc(50% - 9px);
-    left         : calc(50% - 9px);
+.cards-muestras {
+    height       : 200px;
+    margin       : 50px;
+    box-shadow   : 5px 5px 20px #172601;
+    border-radius: 5px;
+    border       : 4px solid #365902;
+    overflow     : hidden;
 }
 
-.descripcion {
-    display        : flex;
-    align-items    : center;
-    justify-content: start;
-    width          : calc(42% + 20px);
-    font-size      : 35px;
+img {
+    width        : 300px;
+    height       : 200px;
+    border-radius: 5px;
 }
 
-.foto {
-    width   : 300px;
-    border  : 10px solid #76A60F;
-    position: relative;
+.contenido {
+    width      : 300px;
+    padding-top: 20px;
+    padding    : 6px;
+    position   : relative;
+    bottom     : 70px;
+    background : rgb(27, 27, 27, .5);
+    color      : #EDF2C2;
+    transition : .7s;
 }
 
-.foto::after {
-    content    : "";
-    display    : block;
-    border     : 20px solid transparent;
-    border-left: 20px solid #76A60F;
-    position   : absolute;
-    right      : -50px;
-    top        : calc(50% - 20px);
+h3 {
+    font-size : 35px;
+    text-align: center;
 }
 
-.foto img {
-    width         : 100%;
-    height        : 250px;
-    vertical-align: top;
+.contenido p {
+    font-size  : 20px;
+    font-weight: bold;
+    text-align : center;
+    visibility : hidden;
+    opacity    : 0;
+
 }
 
-.productos:nth-child(even) {
-    flex-direction: row-reverse;
+.cards-muestras:hover {
+    cursor: pointer;
 }
 
-.productos:nth-child(even) .descripcion {
-    justify-content: end;
+.cards-muestras:hover .contenido {
+    height    : 140px;
+    bottom    : 140px;
+    background: #172601;
 }
 
-.productos:nth-child(even) .foto::after {
-    content     : "";
-    border      : 20px solid transparent;
-    border-right: 20px solid #76A60F;
-    right       : initial;
-    left        : -50px;
+.cards-muestras:hover p {
+    opacity   : 1;
+    visibility: visible;
+    bottom    : 15px;
 }
-
 
 /*.....CONTACTO.....*/
 .contacto {
@@ -262,8 +237,6 @@ main {
     background-repeat    : no-repeat;
     background-attachment: fixed;
     background-position  : center;
-
-
 }
 
 .contacto h1 {
@@ -291,36 +264,63 @@ footer div ul li {
 }
 
 footer div ul li a {
-    display      : block;
-    width        : 42px;
-    height       : 42px;
-    line-height  : 42px;
-    text-align   : center;
-    margin       : 0 10px;
-    border-radius: 15px;
-    transition   : all .2s ease-in-out;
-    font-size    : 22px;
-    color        : #EDF2C2;
+    width           : 50px;
+    height          : 50px;
+    background-color: #EDF2C2;
+    text-align      : center;
+    line-height     : 40px;
+    font-size       : 30px;
+    margin          : 0 10px;
+    display         : block;
+    border-radius   : 50%;
+    position        : relative;
+    overflow        : hidden;
+    border          : 3px solid #EDF2C2;
+    z-index         : 1;
 }
 
-footer div ul li .top:hover {
-    color      : #ECF23D;
-    text-shadow: 0 0 15px #ECF23D;
+footer ul li a .icon {
+    position  : relative;
+    color     : #76A60F;
+    transition: .5s;
+    z-index   : 3;
 }
 
-footer div ul li .whatsapp:hover {
-    color      : #4cd137;
-    text-shadow: 0 0 15px #4cd137;
+footer ul li a:hover .icon {
+    color    : #EDF2C2;
+    transform: rotateY(360deg);
 }
 
-footer div ul li .instagram:hover {
-    color      : #d137b7;
-    text-shadow: 0 0 15px #d137b7;
+footer ul li a:before {
+    content   : "";
+    position  : absolute;
+    top       : 100%;
+    left      : 0;
+    width     : 100%;
+    height    : 100%;
+    background: #f00;
+    transition: .5s;
+    z-index   : 2;
 }
 
-footer div ul li .mail:hover {
-    color      : #d13744;
-    text-shadow: 0 0 15px #d13744;
+footer ul li a:hover:before {
+    top: 0;
+}
+
+footer ul li:nth-child(1) a:before {
+    background: #dd8706;
+}
+
+footer ul li:nth-child(2) a:before {
+    background: #4cd137;
+}
+
+footer ul li:nth-child(3) a:before {
+    background: #d137b7;
+}
+
+footer ul li:nth-child(4) a:before {
+    background: #d13744;
 }
 
 footer p {
@@ -350,5 +350,61 @@ footer .powered {
 
     .nav-link {
         text-align: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .encabezado .logo {
+        width : 100px;
+        height: 70px;
+    }
+
+    .encabezado .titulo-header {
+        font-size: 40px;
+    }
+
+    .banner {
+        height: 60vh;
+    }
+
+    .banner .titulo {
+        font-size: 50px;
+    }
+
+    .banner .subtitulo {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .encabezado .logo {
+        width : 80px;
+        height: 50px;
+    }
+
+    .encabezado .titulo-header {
+        font-size: 30px;
+    }
+
+    .banner {
+        height: 50vh;
+    }
+
+    .muestras {
+        font-size: 25px;
+    }
+
+    .contenido h3 {
+        font-size: 25px;
+    }
+
+    .contenido p {
+        font-size: 16px;
+    }
+
+    .contenido {
+        width: 212px;
+
     }
 }
