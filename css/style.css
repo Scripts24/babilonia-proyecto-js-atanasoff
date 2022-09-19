@@ -188,7 +188,7 @@ img {
 }
 
 .contenido {
-    width      : 100%;
+    width      : 300px;
     padding-top: 20px;
     padding    : 6px;
     position   : relative;
@@ -375,6 +375,10 @@ footer .powered {
     .banner .subtitulo {
         font-size: 40px;
     }
+
+    .cards-muestras{
+        margin: 20px;
+    }
 }
 
 @media screen and (max-width:400px) {
@@ -395,12 +399,20 @@ footer .powered {
         font-size: 25px;
     }
 
+    .contenido{
+        width: 100%;
+    }
+
     .contenido h3 {
         font-size: 25px;
     }
 
     .contenido p {
         font-size: 16px;
+    }
+
+    footer p{
+        font-size: 20px;
     }
 
 }
