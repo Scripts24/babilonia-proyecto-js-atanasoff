@@ -53,12 +53,16 @@
     <!-- Fin encabezado con logo y navbar Bootstrap-->
     <!-- Inicio contenido principal-->
     <main>
-        <!--Formulario contacto -->
+        <!--Formulario contacto - glassmorphism-->
         <section class="contacto">
             <h1>CONTÁCTANOS</h1>
-
-
-
+            <form>
+                <input name="name" type="text" class="feedback-input" placeholder="Nombre y apellido" required/>
+                <input name="email" type="text" class="feedback-input" placeholder="Email" required/>
+                <textarea name="text" class="feedback-input" placeholder="Consulta" required></textarea>
+                <input type="submit" value="Enviar" /> 
+                <input type="reset" value="Borrar" />
+            </form>
         </section>
     </main>
     <!-- Fin contenido principal-->

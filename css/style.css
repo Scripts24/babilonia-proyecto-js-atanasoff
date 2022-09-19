@@ -232,7 +232,7 @@ h3 {
 .contacto {
     background-image     : url("../img/banner.png");
     width                : 100%;
-    height               : 90vh;
+    height               : 650px;
     background-size      : cover;
     background-repeat    : no-repeat;
     background-attachment: fixed;
@@ -240,8 +240,73 @@ h3 {
 }
 
 .contacto h1 {
-    padding-top: 40px;
-    color      : #ECF23D;
+    padding-top  : 30px;
+    margin-bottom: 30px;
+    color        : #ECF23D;
+}
+
+form {
+    max-width              : 420px;
+    width                  : 90%;
+    margin                 : auto;
+    padding                : 5px 20px;
+    background             : rgba(198, 182, 182, 0.25);
+    box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter        : blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius          : 10px;
+    border                 : 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.feedback-input {
+    color           : #ECF23D;
+    font-family     : 'EB Garamond', serif;
+    font-size       : 18px;
+    border-radius   : 5px;
+    line-height     : 22px;
+    background-color: transparent;
+    border          : 2px solid #76A60F;
+    transition      : all 0.3s;
+    padding         : 20px;
+    margin-top      : 15px;
+    margin-bottom   : 15px;
+    width           : 100%;
+    outline         : 0;
+}
+
+.feedback-input:focus {
+    border: 2px solid #76A60F;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #ECF23D;
+}
+
+textarea {
+    height: 150px;
+}
+
+[type="submit"],
+[type="reset"] {
+    font-family   : 'EB Garamond', serif;
+    width         : 100%;
+    margin-bottom : 15px;
+    background    : #76A60F;
+    border-radius : 5px;
+    border        : 0;
+    cursor        : pointer;
+    color         : #ECF23D;
+    font-size     : 20px;
+    padding-top   : 5px;
+    padding-bottom: 5px;
+    transition    : all 0.3s;
+    margin-top    : -4px;
+}
+
+[type="submit"]:hover,
+[type="reset"]:hover {
+    background: #365902;
 }
 
 /*---FOOTER---*/
@@ -376,7 +441,7 @@ footer .powered {
         font-size: 40px;
     }
 
-    .cards-muestras{
+    .cards-muestras {
         margin: 20px;
     }
 }
@@ -399,7 +464,7 @@ footer .powered {
         font-size: 25px;
     }
 
-    .contenido{
+    .contenido {
         width: 100%;
     }
 
@@ -411,7 +476,11 @@ footer .powered {
         font-size: 16px;
     }
 
-    footer p{
+    .contacto h1{
+        font-size: 40px;
+    }
+
+    footer p {
         font-size: 20px;
     }
 
