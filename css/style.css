@@ -188,7 +188,7 @@ img {
 }
 
 .contenido {
-    width      : 300px;
+    width      : 100%;
     padding-top: 20px;
     padding    : 6px;
     position   : relative;
@@ -403,8 +403,5 @@ footer .powered {
         font-size: 16px;
     }
 
-    .contenido {
-        width: 212px;
-
-    }
 }
+
