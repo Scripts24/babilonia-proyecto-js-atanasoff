@@ -21,6 +21,11 @@ h1 {
     font-size : 50px;
 }
 
+h2 {
+    text-align: center;
+    font-size : 40px;
+}
+
 p {
     font-family: 'EB Garamond', serif;
 }
@@ -226,6 +231,79 @@ h3 {
     opacity   : 1;
     visibility: visible;
     bottom    : 15px;
+}
+
+/*.....CONÓCENOS.....*/
+.nosotros h1{
+    color: #365902;
+    padding-top: 30px;
+}
+
+.wrapper{
+    max-width: 1000px;
+    margin: 30px auto;
+    display        : flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wrapper .card{
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #EDF2C2;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5);
+}
+
+.wrapper .card:hover{
+    z-index: 1000;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5);
+}
+
+.card .img-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #172601;
+    transform-origin:left;
+    z-index: 1;
+    transition: 1s;
+}
+
+.card:hover .img-box{
+    transform: rotateY(-135deg)
+}
+
+.card .img-box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+
+.mapa h2 {
+    color        : #365902;
+    margin-bottom: 20px;
+    margin-top   : 30px;
+}
+
+.mapa iframe {
+    width: 100%;
 }
 
 /*.....CONTACTO.....*/
@@ -476,7 +554,7 @@ footer .powered {
         font-size: 16px;
     }
 
-    .contacto h1{
+    .contacto h1 {
         font-size: 40px;
     }
 
@@ -485,4 +563,3 @@ footer .powered {
     }
 
 }
-
