@@ -44,6 +44,7 @@ p {
 .titulo-header {
     font-size: 50px;
     color    : #EDF2C2;
+    
 }
 
 .encabezado {
@@ -146,11 +147,13 @@ main {
 .banner .titulo {
     font-size: 80px;
     color    : #ECF23D;
+    background   : rgba(0, 0, 0, 0.4);
 }
 
 .banner h3 {
     font-size: 50px;
     color    : #ECF23D;
+    background   : rgba(0, 0, 0, 0.4);
 }
 
 .banner a {
@@ -161,6 +164,7 @@ main {
     text-decoration: none;
     border         : 2px solid #ECF23D;
     padding        : 3px 15px;
+    background   : rgba(0, 0, 0, 0.4);
 }
 
 /*.....Galería con efectos.....*/
