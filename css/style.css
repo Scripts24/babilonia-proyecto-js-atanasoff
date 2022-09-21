@@ -239,22 +239,22 @@ h3 {
 
 /*.....TIENDA.....*/
 
-.carrito{
-padding: 10px 15px;
-color:#ECF23D;
-font-size: 35px;
+.carrito {
+    padding  : 10px 15px;
+    color    : #ECF23D;
+    font-size: 35px;
 }
 
-.carrito:hover{
+.carrito:hover {
     cursor: pointer;
-    color: #EDF2C2;
+    color : #EDF2C2;
 }
 
-.producto h1{
-    padding-top: 30px;
+.producto h1 {
+    padding-top  : 30px;
     margin-bottom: 30px;
-    font-size: 65px;
-    color: #172601;
+    font-size    : 65px;
+    color        : #172601;
 }
 
 .producto .box-container {
@@ -282,10 +282,10 @@ font-size: 35px;
     width        : 100%;
     border-bottom: 2px solid #172601;
     object-fit   : cover;
-    transition: all 2s ease;
+    transition   : all 2s ease;
 }
 
-.producto .box-container .box img:hover{
+.producto .box-container .box img:hover {
     transform: scale(1.5) rotateY(-180deg);
 }
 
@@ -317,7 +317,7 @@ font-size: 35px;
     font-size  : 25px;
 }
 
-.producto .box-container .box .cantidad input {
+.producto .box-container .box .cantidad select {
     font-size    : 14px;
     padding      : 5px;
     text-align   : center;
@@ -619,6 +619,12 @@ footer .powered {
     }
 }
 
+@media screen and (max-width:700px) {
+    .producto h1 {
+        font-size: 55px;
+    }
+}
+
 @media screen and (max-width:500px) {
 
     .encabezado .logo {
@@ -645,17 +651,22 @@ footer .powered {
     .cards-muestras {
         margin: 20px;
     }
+
+    .producto h1 {
+        font-size: 50px;
+    }
+
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:420px) {
     .encabezado .logo {
         width : 60px;
         height: 50px;
     }
 
-    .carrito{
-        font-size:20px;
-        padding: 6px 6px;
+    .carrito {
+        font-size: 20px;
+        padding  : 10px 4px;
     }
 
     .encabezado .titulo-header {
@@ -680,6 +691,10 @@ footer .powered {
 
     .contenido p {
         font-size: 16px;
+    }
+
+    .producto h1 {
+        font-size: 40px;
     }
 
     .contacto h1 {
