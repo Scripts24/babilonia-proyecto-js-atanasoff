@@ -44,7 +44,7 @@ p {
 .titulo-header {
     font-size: 50px;
     color    : #EDF2C2;
-    
+
 }
 
 .encabezado {
@@ -145,15 +145,15 @@ main {
 }
 
 .banner .titulo {
-    font-size: 80px;
-    color    : #ECF23D;
-    background   : rgba(0, 0, 0, 0.4);
+    font-size : 80px;
+    color     : #ECF23D;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .banner h3 {
-    font-size: 50px;
-    color    : #ECF23D;
-    background   : rgba(0, 0, 0, 0.4);
+    font-size : 50px;
+    color     : #ECF23D;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .banner a {
@@ -164,7 +164,7 @@ main {
     text-decoration: none;
     border         : 2px solid #ECF23D;
     padding        : 3px 15px;
-    background   : rgba(0, 0, 0, 0.4);
+    background     : rgba(0, 0, 0, 0.4);
 }
 
 /*.....Galería con efectos.....*/
@@ -237,66 +237,185 @@ h3 {
     bottom    : 15px;
 }
 
+/*.....TIENDA.....*/
+
+.carrito{
+padding: 10px 15px;
+color:#ECF23D;
+font-size: 35px;
+}
+
+.carrito:hover{
+    cursor: pointer;
+    color: #EDF2C2;
+}
+
+.producto h1{
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-size: 65px;
+    color: #172601;
+}
+
+.producto .box-container {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-around;
+    gap            : 20PX;
+    margin-top     : 30px;
+    padding-bottom : 40px;
+}
+
+.producto .box-container .box {
+    width        : 300px;
+    height       : 520px;
+    border       : 3px solid #172601;
+    border-radius: 5px;
+    text-align   : center;
+    position     : relative;
+    overflow     : hidden;
+    background   : #c8e9989a;
+}
+
+.producto .box-container .box img {
+    height       : 300px;
+    width        : 100%;
+    border-bottom: 2px solid #172601;
+    object-fit   : cover;
+    transition: all 2s ease;
+}
+
+.producto .box-container .box img:hover{
+    transform: scale(1.5) rotateY(-180deg);
+}
+
+.producto .box-container .box .descuento {
+    position     : absolute;
+    top          : 16px;
+    left         : 16px;
+    background   : rgba(9, 36, 9, 0.6);
+    color        : #EDF2C2;
+    font-size    : 20px;
+    font-weight  : bold;
+    padding      : 10px;
+    border-radius: 3px;
+}
+
+.producto .box-container .box h3 {
+    color    : #365902;
+    font-size: 35px;
+    padding  : 6px 0;
+}
+
+.producto .box-container .box .cantidad {
+    padding: 6px 0;
+}
+
+.producto .box-container .box .cantidad span {
+    font-family: 'EB Garamond', serif;
+    font-style : italic;
+    font-size  : 25px;
+}
+
+.producto .box-container .box .cantidad input {
+    font-size    : 14px;
+    padding      : 5px;
+    text-align   : center;
+    background   : rgba(0, 0, 0, .1);
+    border       : 2px solid;
+    border-radius: 3px;
+}
+
+.producto .box-container .box .precio {
+    font-weight: bold;
+    color      : #172601;
+    font-size  : 20px;
+}
+
+.producto .box-container .box .precio span {
+    text-decoration: line-through;
+    color          : #999;
+    font-size      : 20px;
+}
+
+.producto .box-container .box .btn-carrito {
+    background     : #365902;
+    color          : #EDF2C2;
+    display        : block;
+    margin         : 10px 5px;
+    font-size      : 25px;
+    font-family    : 'EB Garamond', serif;
+    font-style     : italic;
+    text-decoration: none;
+    border         : 2px solid #172601;
+    border-radius  : 5px;
+}
+
+.producto .box-container .box .btn-carrito:hover {
+    cursor    : pointer;
+    background: #76A60F;
+}
+
 /*.....CONÓCENOS.....*/
-.nosotros h1{
-    color: #365902;
+.nosotros h1 {
+    color      : #365902;
     padding-top: 30px;
 }
 
-.wrapper{
-    max-width: 1000px;
-    margin: 30px auto;
+.wrapper {
+    max-width      : 1000px;
+    margin         : 30px auto;
     display        : flex;
-    flex-wrap: wrap;
+    flex-wrap      : wrap;
     justify-content: space-around;
 }
 
-.wrapper .card{
-    position: relative;
-    margin: 20px 0;
-    width: 300px;
-    height: 400px;
-    background: #EDF2C2;
+.wrapper .card {
+    position       : relative;
+    margin         : 20px 0;
+    width          : 300px;
+    height         : 400px;
+    background     : #EDF2C2;
     transform-style: preserve-3d;
-    transform: perspective(2000px);
-    transition: 1s;
-    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5);
+    transform      : perspective(2000px);
+    transition     : 1s;
+    box-shadow     : inset 300px 0 50px rgba(0, 0, 0, .5);
 }
 
-.wrapper .card:hover{
-    z-index: 1000;
-    transform: perspective(2000px) rotate(-10deg);
+.wrapper .card:hover {
+    z-index   : 1000;
+    transform : perspective(2000px) rotate(-10deg);
     box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5);
 }
 
-.card .img-box{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #172601;
-    transform-origin:left;
-    z-index: 1;
-    transition: 1s;
+.card .img-box {
+    position        : relative;
+    width           : 100%;
+    height          : 100%;
+    border          : 1px solid #172601;
+    transform-origin: left;
+    z-index         : 1;
+    transition      : 1s;
 }
 
-.card:hover .img-box{
+.card:hover .img-box {
     transform: rotateY(-135deg)
 }
 
-.card .img-box img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.card .img-box img {
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    height    : 100%;
     object-fit: cover;
 }
 
-.card .info{
+.card .info {
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px;
+    top     : 0;
+    left    : 0;
+    padding : 20px;
 }
 
 
