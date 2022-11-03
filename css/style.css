@@ -31,7 +31,7 @@ p {
 }
 
 /*.....HEADER.....*/
-/*.....Modificación estilos navbar Bootstrap.....*/
+/*.....Modificación estilos navbar y modal Bootstrap.....*/
 .navbar {
     background-color: #172601;
 }
@@ -44,7 +44,6 @@ p {
 .titulo-header {
     font-size: 50px;
     color    : #EDF2C2;
-
 }
 
 .encabezado {
@@ -52,6 +51,47 @@ p {
     justify-content: space-between;
     align-items    : center;
     flex-direction : row;
+}
+
+.modal-contenedor {
+    display      : flex;
+    align-items  : center;
+    gap          : 40px;
+    margin-bottom: 10px;
+}
+
+.modal-body {
+    background-color: #ecf23d7c;
+}
+
+.modal-footer {
+    display        : flex;
+    justify-content: center;
+}
+
+.btn-modal {
+    border-radius   : 5px;
+    background-color: #365902;
+    color           : #EDF2C2;
+    padding         : 4px;
+}
+
+.btn-modal:hover {
+    cursor          : pointer;
+    background-color: #76A60F;
+}
+
+.img-modal {
+    width : 200px;
+    height: 180px;
+}
+
+.parrafo-modal {
+    text-align : center;
+    color      : #172601;
+    font-size  : 35px;
+    font-style : italic;
+    font-family: 'EB Garamond', serif;
 }
 
 .btn {
@@ -242,7 +282,7 @@ h3 {
 .carrito {
     padding  : 10px 15px;
     color    : #ECF23D;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .carrito:hover {
@@ -268,7 +308,7 @@ h3 {
 
 .producto .box-container .box {
     width        : 300px;
-    height       : 520px;
+    height       : 480px;
     border       : 3px solid #172601;
     border-radius: 5px;
     text-align   : center;
@@ -278,7 +318,7 @@ h3 {
 }
 
 .producto .box-container .box img {
-    height       : 300px;
+    height       : 250px;
     width        : 100%;
     border-bottom: 2px solid #172601;
     object-fit   : cover;
@@ -289,61 +329,28 @@ h3 {
     transform: scale(1.5) rotateY(-180deg);
 }
 
-.producto .box-container .box .descuento {
-    position     : absolute;
-    top          : 16px;
-    left         : 16px;
-    background   : rgba(9, 36, 9, 0.6);
-    color        : #EDF2C2;
-    font-size    : 20px;
-    font-weight  : bold;
-    padding      : 10px;
-    border-radius: 3px;
-}
-
 .producto .box-container .box h3 {
     color    : #365902;
     font-size: 35px;
-    padding  : 6px 0;
 }
 
 .producto .box-container .box .cantidad {
-    padding: 6px 0;
-}
-
-.producto .box-container .box .cantidad span {
     font-family: 'EB Garamond', serif;
-    font-style : italic;
-    font-size  : 25px;
-}
-
-.producto .box-container .box .cantidad select {
-    font-size    : 14px;
-    padding      : 5px;
-    text-align   : center;
-    background   : rgba(0, 0, 0, .1);
-    border       : 2px solid;
-    border-radius: 3px;
+    font-weight: bold;
+    font-size  : 22px;
+    text-align : center;
 }
 
 .producto .box-container .box .precio {
     font-weight: bold;
     color      : #172601;
-    font-size  : 20px;
-}
-
-.producto .box-container .box .precio span {
-    text-decoration: line-through;
-    color          : #999;
-    font-size      : 20px;
+    font-size  : 24px;
 }
 
 .producto .box-container .box .btn-carrito {
     background     : #365902;
     color          : #EDF2C2;
-    display        : block;
-    margin         : 10px 5px;
-    font-size      : 25px;
+    font-size      : 24px;
     font-family    : 'EB Garamond', serif;
     font-style     : italic;
     text-decoration: none;

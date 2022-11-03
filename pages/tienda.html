@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
     <!--FAVICON-->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <!--Font-awesome-->
@@ -21,13 +22,15 @@
 <body>
     <!-- Inicio encabezado con logo y navbar Bootstrap  -->
     <header>
+
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <div class="encabezado">
                     <a class="navbar-brand" href="../index.html"><img class="logo" id="top" src="../img/logo.png"
                             alt="logo del sitio"></a>
                     <h1 class="titulo-header">Babilonia</h1>
-                    <a href="#" class="fas fa-shopping-cart carrito"></a>
+                    <a data-bs-toggle="modal" data-bs-target="#modal" ><i
+                            class="fas fa-shopping-cart carrito" id="carrito-contenedor">0</i></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -52,219 +55,43 @@
                 </div>
             </div>
         </nav>
+        <!-- Modal Bootstrap  -->
+        <div class="container-xl">
+            <div class="modal" tabindex="-1" role="dialog" id="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Carrito</h3>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-modal" id="vaciar-carrito">
+                                Vaciar carrito
+                            </button>
+                            <button type="button" class="btn-modal" id="procesar-compra">
+                                Continuar compra
+                            </button>
+                            <button type="button" class="btn-modal" data-bs-dismiss="modal">
+                                Cerrar
+                            </button>
+                            <span>Valor total:</span>
+                            <p class="text-center" id="valor-total"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- Fin encabezado con logo y navbar Bootstrap-->
     <!-- Inicio contenido principal-->
     <main>
         <!-- Inicio ofertas  -->
-        <section class="producto" id="producto">
+        <section class="producto">
             <h1 class="tienda animate__animated animate__flash animate__slow"> OFERTAS </h1>
-            <div class="box-container">
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/potus.jpg" alt="Potus dorado">
-                    <h3>Potus</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$810 <span>$900</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-25%</span>
-                    <img src="../img/ficus.jpg" alt="Ficus">
-                    <h3>Ficus</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$1125 <span>$1500</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-15%</span>
-                    <img src="../img/areca.jpg" alt="Palma areca">
-                    <h3>Palma Areca</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$7650 <span>$9000</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/monsteradeliciosa.jpg" alt="Monstera deliciosa">
-                    <h3>Monstera deliciosa</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$3420 <span>$3800</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-15%</span>
-                    <img src="../img/espadasanjorge.jpg" alt="Espada de San Jorge">
-                    <h3>Espada de San Jorge</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$1190 <span>$1400</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/alocasiaamazonica.jpg" alt="Alocasia amazónica">
-                    <h3>Alocasia amazónica</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$6300 <span>$7000</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/calatheaornata.jpg" alt="Calathea ornata">
-                    <h3>Calathea ornata</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$2250 <span>$2500</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/orquideablanca.jpg" alt="Orquídea blanca">
-                    <h3>Orquídea blanca</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$4680 <span>$5200</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-5%</span>
-                    <img src="../img/macetapiramidal.png" alt="Maceta piramidal plástica">
-                    <h3>Maceta piramidal</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$3325 <span>$3500</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-5%</span>
-                    <img src="../img/macetafibrocemento.jpg" alt="Maceta fibrocemento">
-                    <h3>Maceta fibrocemento</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">1900 <span>$2000</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-10%</span>
-                    <img src="../img/macetaeden.jpg" alt="Maceta plástica edén">
-                    <h3>Maceta edén n°45</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$1980 <span>$2200</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-                <div class="box">
-                    <span class="descuento">-15%</span>
-                    <img src="../img/macetarotomoldeada.jpg" alt="Maceta rotomoldeada">
-                    <h3>Maceta rotomoldeada</h3>
-                    <div class="cantidad">
-                        <span> Cantidad: </span>
-                        <select name="cantidad" id="cantidad" value="1">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
-                    <div class="precio">$5525 <span>$6500</span></div>
-                    <a href="#" class="btn-carrito">Agregar al carrito</a>
-                </div>
-            </div>
+            <div class="box-container" id="contenedor"></div>
         </section>
         <!-- Fin ofertas -->
     </main>
@@ -302,8 +129,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <!-- Simulador compras --> 
-   <script src="../js/main.js"></script>
+    <!-- Script carrito -->
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

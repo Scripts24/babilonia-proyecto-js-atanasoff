@@ -1,1 +1,0 @@
-alert("Bienvenido a Babilonia Deco Natural, si desea comprar alguno de nuestros productos diríjase a la TIENDA de este sitio")
