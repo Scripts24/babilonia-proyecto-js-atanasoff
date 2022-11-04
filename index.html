@@ -56,14 +56,47 @@
     <!-- Fin encabezado con logo y navbar Bootstrap-->
     <!-- Inicio contenido principal-->
     <main>
-        <!--Inicio banner-->
+        <!--Inicio Slider js-->
         <section>
-            <div class="banner">
-                <h2 class="titulo">BABILONIA</h2>
-                <h3 class="subtitulo">Deco Natural</h3>
-                <a href="./pages/tienda.html">Tienda</a>
+            <div class="container-slider">
+                <div class="slider" id="slider">
+                    <div class="slider-section">
+                        <img src="./img/slider.jpg" alt="" class="slider-img">
+                        <div class="slider-content">
+                            <h2 class="slider-titulo">BABILONIA</h2>
+                            <h3 class="slider-subtitulo">Deco Natural</h3>
+                            <a href="./pages/tienda.html" class="btn-tienda">Tienda</a>
+                        </div>
+                    </div>
+                    <div class="slider-section">
+                        <img src="./img/slider1.jpg" alt="" class="slider-img">
+                        <div class="slider-content">
+                            <h2 class="slider-titulo">BABILONIA</h2>
+                            <h3 class="slider-subtitulo">Deco Natural</h3>
+                            <a href="./pages/tienda.html" class="btn-tienda">Tienda</a>
+                        </div>
+                    </div>
+                    <div class="slider-section">
+                        <img src="./img/slider2.jpg" alt="" class="slider-img">
+                        <div class="slider-content">
+                            <h2 class="slider-titulo">BABILONIA</h2>
+                            <h3 class="slider-subtitulo">Deco Natural</h3>
+                            <a href="./pages/tienda.html" class="btn-tienda">Tienda</a>
+                        </div>
+                    </div>
+                    <div class="slider-section">
+                        <img src="./img/slider3.jpg" alt="" class="slider-img">
+                        <div class="slider-content">
+                            <h2 class="slider-titulo">BABILONIA</h2>
+                            <h3 class="slider-subtitulo">Deco Natural</h3>
+                            <a href="./pages/tienda.html" class="btn-tienda">Tienda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-btn slider-btn-right" id="btn-right">&#62;</div>
+                <div class="slider-btn slider-btn-left" id="btn-left">&#60;</div>
             </div>
-            <!--Fin banner-->
+            <!--Fin Slider js-->
         </section>
         <!--Inicio galería con efectos-->
         <section>
@@ -157,6 +190,7 @@
             duration: 1000,
         });
     </script>
+    <script src="./js/slider.js"></script>
 </body>
 
 </html>

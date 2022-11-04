@@ -32,6 +32,7 @@ p {
 
 /*.....HEADER.....*/
 /*.....Modificación estilos navbar y modal Bootstrap.....*/
+
 .navbar {
     background-color: #172601;
 }
@@ -170,41 +171,112 @@ main {
 
 /*.....INDEX.....*/
 
-.banner {
-    background-image     : url("../img/banner.jpg");
-    width                : 100%;
-    height               : 90vh;
-    background-size      : cover;
-    background-repeat    : no-repeat;
-    background-attachment: fixed;
-    background-position  : center;
-    display              : flex;
-    flex-flow            : column;
-    justify-content      : center;
-    align-items          : center;
+/* Slider js */
+.container-slider {
+    position: relative;
+    overflow: hidden;
 }
 
-.banner .titulo {
-    font-size : 80px;
-    color     : #ECF23D;
-    background: rgba(0, 0, 0, 0.4);
+.slider {
+    display    : flex;
+    width      : 400%;
+    height     : 80vh;
+    margin-left: -100%;
+    position   : relative;
 }
 
-.banner h3 {
-    font-size : 50px;
-    color     : #ECF23D;
-    background: rgba(0, 0, 0, 0.4);
+.slider:before {
+    content   : "";
+    position  : absolute;
+    z-index   : 1;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height    : 100%;
 }
 
-.banner a {
-    font-size      : 30px;
+.slider-section {
+    width   : 100%;
+    position: relative;
+}
+
+.slider-img {
+    display   : block;
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position     : absolute;
+    width        : 40px;
+    height       : 40px;
+    background   : rgba(255, 255, 255, 0.7);
+    top          : 50%;
+    transform    : translateY(-50%);
+    font-size    : 30px;
+    font-weight  : bold;
+    font-family  : monospace;
+    text-align   : center;
+    border-radius: 50%;
+    cursor       : pointer;
+    z-index      : 999;
+}
+
+.slider-btn:hover {
+    background: #fff;
+}
+
+.slider-btn-left {
+    left: 10px;
+}
+
+.slider-btn-right {
+    right: 10px;
+}
+
+.slider-content {
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    color     : white;
+    transform : translate(-50%, -50%);
+    width     : 60%;
+    text-align: center;
+    z-index   : 100;
+}
+
+.btn-tienda {
+    display        : block;
+    border         : 2px solid #ECF23D;
     color          : #ECF23D;
+    padding        : 10px;
+    text-align     : center;
+    font-size      : 30px;
     font-family    : 'EB Garamond', serif;
     font-style     : italic;
     text-decoration: none;
-    border         : 2px solid #ECF23D;
-    padding        : 3px 15px;
-    background     : rgba(0, 0, 0, 0.4);
+    width          : 150px;
+    margin         : 20px auto;
+    transition     : all 0.5s;
+}
+
+.btn-tienda:hover {
+    background: #ECF23D;
+    color     : white;
+}
+
+.slider-titulo {
+    font-size : 80px;
+    color     : #ECF23D;
+    margin: 0;
+}
+
+.slider-subtitulo {
+    font-size : 50px;
+    color     : #ECF23D;
+    margin: 5px 0;
 }
 
 /*.....Galería con efectos.....*/
@@ -280,17 +352,17 @@ h3 {
 /*.....TIENDA.....*/
 
 .carrito {
-    padding  : 10px 15px;
-    color    : #ECF23D;
-    font-size: 30px;
+    margin-left: 10px;
+    color      : #EDF2C2;
+    font-size  : 30px;
 }
 
 .carrito:hover {
     cursor: pointer;
-    color : #EDF2C2;
+    color : #a1c554;
 }
 
-.producto h1 {
+.producto h2 {
     padding-top  : 30px;
     margin-bottom: 30px;
     font-size    : 65px;
@@ -624,11 +696,19 @@ footer .powered {
     .nav-link {
         text-align: center;
     }
+
+    .slider{
+        height: 65vh;
+    }
 }
 
 @media screen and (max-width:700px) {
-    .producto h1 {
+    .producto h2 {
         font-size: 55px;
+    }
+
+    .slider{
+        height: 55vh;
     }
 }
 
@@ -643,15 +723,14 @@ footer .powered {
         font-size: 40px;
     }
 
-    .banner {
-        height: 60vh;
+    .slider{
+        height: 50vh;
     }
-
-    .banner .titulo {
+    .slider-titulo {
         font-size: 50px;
     }
 
-    .banner .subtitulo {
+    .slider-subtitulo {
         font-size: 40px;
     }
 
@@ -659,10 +738,9 @@ footer .powered {
         margin: 20px;
     }
 
-    .producto h1 {
+    .producto h2 {
         font-size: 50px;
     }
-
 }
 
 @media screen and (max-width:420px) {
@@ -680,8 +758,8 @@ footer .powered {
         font-size: 30px;
     }
 
-    .banner {
-        height: 50vh;
+    .slider{
+        height: 45vh;
     }
 
     .muestras {
@@ -700,7 +778,7 @@ footer .powered {
         font-size: 16px;
     }
 
-    .producto h1 {
+    .producto h2 {
         font-size: 40px;
     }
 
