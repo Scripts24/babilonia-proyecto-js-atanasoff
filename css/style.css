@@ -70,6 +70,14 @@ p {
     justify-content: center;
 }
 
+.modal-footer span{
+    font-weight: bold;
+}
+
+#valor-total{
+    font-weight: bold;
+}
+
 .btn-modal {
     border-radius   : 5px;
     background-color: #365902;
@@ -519,16 +527,8 @@ h3 {
     background-position  : center;
 }
 
-.content-form {
-    padding-top    : 90px;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    flex-direction : column;
-    height         : 80%;
-}
-
-.content-form h1 {
+.contacto h1 {
+    padding-top  : 30px;
     margin-bottom: 50px;
     color        : #ECF23D;
 }
@@ -537,6 +537,7 @@ form {
     max-width              : 420px;
     width                  : 90%;
     padding                : 5px 20px;
+    margin                 : auto;
     background             : rgba(198, 182, 182, 0.25);
     box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter        : blur(4px);

@@ -44,33 +44,29 @@ const carrito_contenedor = document.querySelector("#carrito-contenedor");
 const vaciar_carrito = document.querySelector("#vaciar-carrito");
 const valor_total = document.querySelector("#valor-total");
 
+
+//Cuando el documento se cargue se muestra lo que esté guardado en el storage si se agregó algo
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || []
     mostrar_carrito()
 })
 
-
 //Recorro los productos
-//Desestructuración
 //Inyecto en HTML
 catalogo.forEach((prod) => {
-    const { id, nombre, precio, img, cantidad } = prod
+    const { id, nombre, precio, img} = prod
     contenedor.innerHTML += `
     <div class="box">
     <img  src="${img}">
     <h3>${nombre}</h3>
     <div>
     <p class="precio">Precio: $ ${precio}</p>
-    <p class="cantidad">Cantidad: ${cantidad}</p>
     <button class="btn-carrito" onclick="agregar_producto(${id})">Agregar al carrito</button>
+    <br> <br>
+    <a class="btn-carrito" href="#top">Ir al carrito</a>
     </div>
     </div> 
     `
-});
-
-vaciar_carrito.addEventListener('click', () => {
-    carrito.length = [];
-    mostrar_carrito();
 });
 
 // Función para agregar productos al carrito
@@ -105,7 +101,7 @@ const mostrar_carrito = () => {
                 <p>Producto: ${nombre}</p>
                 <p>Precio: $ ${precio}</p>
                 <p>Cantidad :${cantidad}</p>
-                <button class="btn-modal delete"  onclick="eliminar_producto(${id})">Eliminar</button>
+                <button class="btn-modal delete" onclick="eliminar_producto(${id})">Eliminar</button>
             </div>
         </div>
         <hr>
@@ -118,8 +114,9 @@ const mostrar_carrito = () => {
             `;
     }
 
-    carrito_contenedor.textContent = carrito.length;
+    carrito_contenedor.textContent = carrito.length; //Muestro el número de productos agregados junto al ícono del carrito
 
+    //Método reduce para calcular el valor total de los productos agregados
     if (valor_total) {
         valor_total.innerText = carrito.reduce(
             (acc, prod) => acc + prod.cantidad * prod.precio,
@@ -137,6 +134,12 @@ function eliminar_producto(id) {
     mostrar_carrito();
 }
 
+vaciar_carrito.addEventListener('click', () => {
+    carrito.length = [];
+    mostrar_carrito();
+});
+
+
 //Guardar Storage
 function guardar_storage() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -144,7 +147,7 @@ function guardar_storage() {
 
 
 
-
+//EL PROCESO DE COMPRA LO REALIZO PARA LA ENTREGA FINAL
 
 
 
