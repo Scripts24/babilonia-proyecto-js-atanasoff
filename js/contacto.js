@@ -42,20 +42,39 @@ function contact_form_validations() {
     //Evento submit
     document.addEventListener("submit", (e) => {
         e.preventDefault();
-        // alert("Enviando formulario");
-
+        
         const $loader = document.querySelector(".contact-form-loader"),
             $response = document.querySelector(".contact-form-response");
 
         $loader.classList.remove("none");
 
-        setTimeout(() => {
-            $loader.classList.add("none");
-            $response.classList.remove("none");
-            $form.reset();
 
-            setTimeout(() => $response.classList.add("none"), 3000);
-        }, 3000);
+        // ---PETICIÓN FETCH-----
+        fetch("https://formsubmit.co/ajax/pato.atanasoff0815@gmail.com", {
+            method: "POST",
+            body: new FormData(e.target)
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(json => {
+                console.log(json);
+                $loader.classList.add("none");
+                $response.classList.remove("none");
+                $response.innerHTML = `<p>${json.message}</p>`;
+                $form.reset();
+            })
+            .catch(err => {
+                console.log(err);
+                let message = err.statusText || "Error al enviar, intenta nuevamente";
+                $response.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+            })
+            .finally(() => setTimeout(() => {
+                $response.classList.add("none");
+                $response.innerHTML = "";
+            }, 3000));
     });
-
 }
+
+
+
+
+
