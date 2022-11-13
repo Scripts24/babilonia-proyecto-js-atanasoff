@@ -44,18 +44,59 @@ const carrito_contenedor = document.querySelector("#carrito-contenedor");
 const vaciar_carrito = document.querySelector("#vaciar-carrito");
 const valor_total = document.querySelector("#valor-total");
 
+//Compra
+const continuar_compra = document.querySelector("#continuar-compra");
+const activar_procesar_compra = document.querySelector("#activar-procesar-compra");
+const total_compra = document.querySelector("#total-compra");
+const formulario = document.querySelector('#procesar-pago')
+
+if (activar_procesar_compra) {
+    activar_procesar_compra.addEventListener("click", procesar_compra);
+}
 
 //Cuando el documento se cargue se muestra lo que esté guardado en el storage si se agregó algo
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || []
-    mostrar_carrito()
-})
+    mostrar_carrito();
+
+    if (activar_procesar_compra) {
+        document.querySelector("#activar-procesar-compra").click(procesar_compra);
+    }
+});
+
+if (formulario) {
+    formulario.addEventListener('submit', enviarCompra)
+}
+
+
+if (vaciar_carrito) {
+    vaciar_carrito.addEventListener('click', () => {
+        carrito.length = [];
+        mostrar_carrito();
+    });
+}
+
+if (continuar_compra) {
+    continuar_compra.addEventListener("click", () => {
+        if (carrito.length === 0) {
+            Swal.fire({
+                title: "¡El carrito está vacío!",
+                text: "Agrega algún producto para continuar con la compra",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+            });
+        } else {
+            location.href = "../compra.html"
+        }
+    });
+}
 
 //Recorro los productos
 //Inyecto en HTML
 catalogo.forEach((prod) => {
-    const { id, nombre, precio, img} = prod
-    contenedor.innerHTML += `
+    const { id, nombre, precio, img } = prod
+    if (contenedor) {
+        contenedor.innerHTML += `
     <div class="box">
     <img  src="${img}">
     <h3>${nombre}</h3>
@@ -67,7 +108,9 @@ catalogo.forEach((prod) => {
     </div>
     </div> 
     `
+    }
 });
+
 
 // Función para agregar productos al carrito
 function agregar_producto(id) {
@@ -89,10 +132,11 @@ function agregar_producto(id) {
 //Muestro en el Modal los productos agregados con la opción de eliminar
 const mostrar_carrito = () => {
     const modal_body = document.querySelector('.modal .modal-body')
-    modal_body.innerHTML = ''
-    carrito.forEach((prod) => {
-        const { id, nombre, precio, img, cantidad } = prod
-        modal_body.innerHTML += `
+    if (modal_body) {
+        modal_body.innerHTML = ''
+        carrito.forEach((prod) => {
+            const { id, nombre, precio, img, cantidad } = prod
+            modal_body.innerHTML += `
         <div class="modal-contenedor">
             <div>
                 <img class="img-fluid img-modal" src="${img}"/>
@@ -106,7 +150,8 @@ const mostrar_carrito = () => {
         </div>
         <hr>
     `
-    })
+        })
+    }
 
     if (carrito.length === 0) {
         modal_body.innerHTML = `
@@ -134,11 +179,6 @@ function eliminar_producto(id) {
     mostrar_carrito();
 }
 
-vaciar_carrito.addEventListener('click', () => {
-    carrito.length = [];
-    mostrar_carrito();
-});
-
 
 //Guardar Storage
 function guardar_storage() {
@@ -146,11 +186,87 @@ function guardar_storage() {
 }
 
 
+//COMPRA 
+function procesar_compra() {
+    carrito.forEach((prod) => {
+        const lista_compra = document.querySelector("#lista-compra tbody");
+        const { nombre, precio, img, cantidad } = prod;
+        if (lista_compra) {
+            const row = document.createElement("tr");
+            row.innerHTML += `
+                <td>
+                <img class="img-fluid img-modal" src="${img}"/>
+                </td>
+                <td>${nombre}</td>
+                <td>${precio}</td>
+                <td>${cantidad}</td>
+                <td>${precio * cantidad}</td>
+                `;
+            lista_compra.appendChild(row);
+        }
+    });
+    total_compra.innerText = carrito.reduce(
+        (acc, prod) => acc + prod.cantidad * prod.precio,
+        0
+    );
+}
 
-//EL PROCESO DE COMPRA LO REALIZO PARA LA ENTREGA FINAL
 
 
+function enviarCompra(e) {
+    e.preventDefault()
+    const cliente = document.querySelector('#cliente').value
+    const email = document.querySelector('#correo').value
 
+    if (email === '' || cliente == '') {
+        Swal.fire({
+            title: "¡Por favor ingresa tus datos para continuar!",
+            text: "Debes completar el formulario",
+            icon: "error",
+            confirmButtonText: "Aceptar",
+        })
+    } else {
+
+        const btn = document.getElementById('button');
+
+        btn.value = 'Enviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_qxwi0jn';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Finalizar compra';
+                alert('Correo enviado!');
+            }, (err) => {
+                btn.value = 'Finalizar compra';
+                alert(JSON.stringify(err));
+            });
+
+        const spinner = document.querySelector('#spinner')
+        spinner.classList.add('d-flex')
+        spinner.classList.remove('d-none')
+
+        setTimeout(() => {
+            spinner.classList.remove('d-flex')
+            spinner.classList.add('d-none')
+            formulario.reset()
+
+            const alertExito = document.createElement('p')
+            alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
+            alertExito.textContent = 'Compra realizada correctamente'
+            formulario.appendChild(alertExito)
+
+            setTimeout(() => {
+                alertExito.remove()
+            }, 6000)
+
+
+        }, 6000)
+    }
+    localStorage.clear()
+
+}
 
 
 

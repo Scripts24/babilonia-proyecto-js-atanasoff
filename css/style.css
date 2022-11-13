@@ -16,6 +16,10 @@ h6 {
     font-weight: 700;
 }
 
+.compra-js {
+    background-color: #EDF2C2;
+}
+
 h1 {
     text-align: center;
     font-size : 50px;
@@ -70,11 +74,11 @@ p {
     justify-content: center;
 }
 
-.modal-footer span{
+.modal-footer span {
     font-weight: bold;
 }
 
-#valor-total{
+#valor-total {
     font-weight: bold;
 }
 
@@ -518,26 +522,36 @@ h3 {
 
 /*.....CONTACTO.....*/
 .contacto {
-    background-image     : url("../img/banner.png");
-    width                : 100%;
-    height               : 100vh;
-    background-size      : cover;
-    background-repeat    : no-repeat;
-    background-attachment: fixed;
-    background-position  : center;
+    background-image   : url("../img/banner.png");
+    height             : 100%;
+    max-width          : 100%;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center;
 }
 
 .contacto h1 {
-    padding-top  : 30px;
-    margin-bottom: 50px;
-    color        : #ECF23D;
+    padding-top: 30px;
+    color      : #EDF2C2;
 }
 
-form {
-    max-width              : 420px;
-    width                  : 90%;
-    padding                : 5px 20px;
-    margin                 : auto;
+.contenedor-form {
+    padding-bottom: 50px;
+}
+
+.contact-form {
+    --form-ok-color   : #4caf50;
+    --form-error-color: #f44336;
+    margin-left       : auto;
+    margin-right      : auto;
+    width             : 80%;
+}
+
+.contact-form>* {
+    padding                : 0.5rem;
+    margin                 : 1rem auto;
+    display                : block;
+    width                  : 100%;
     background             : rgba(198, 182, 182, 0.25);
     box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter        : blur(4px);
@@ -546,56 +560,91 @@ form {
     border                 : 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.feedback-input {
-    color           : #ECF23D;
-    font-family     : 'EB Garamond', serif;
-    font-size       : 18px;
-    border-radius   : 5px;
-    line-height     : 22px;
-    background-color: transparent;
-    border          : 2px solid #76A60F;
-    transition      : all 0.3s;
-    padding         : 20px;
-    margin-top      : 15px;
-    margin-bottom   : 15px;
-    width           : 100%;
-    outline         : 0;
+.contact-form textarea {
+    resize: none;
 }
 
-.feedback-input:focus {
-    border: 2px solid #76A60F;
+.contact-form-loader img {
+    width : 50px;
+    height: 50px;
+
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #ECF23D;
+.contact-form-response {
+    font-family: 'EB Garamond', serif;
+    font-size  : 1.5rem;
+    font-weight: bold;
+    text-align : center;
+    color      : #EDF2C2;
 }
 
-textarea {
-    height: 150px;
+.contact-form input,
+.contact-form textarea {
+    font-size  : 1rem;
+    font-family: 'EB Garamond', serif;
+    color      : #EDF2C2;
 }
 
-[type="submit"],
+.contact-form input[type="submit"],
 [type="reset"] {
-    font-family   : 'EB Garamond', serif;
-    width         : 100%;
-    margin-bottom : 15px;
-    background    : #76A60F;
-    border-radius : 5px;
-    border        : 0;
-    cursor        : pointer;
-    color         : #ECF23D;
-    font-size     : 20px;
-    padding-top   : 5px;
-    padding-bottom: 5px;
-    transition    : all 0.3s;
-    margin-top    : -4px;
+    width      : 50%;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+    color      : #EDF2C2;
+    cursor     : pointer;
 }
 
 [type="submit"]:hover,
 [type="reset"]:hover {
     background: #365902;
 }
+
+.contact-form *::placeholder {
+    color: #EDF2C2;
+}
+
+.contact-form [required]:valid {
+    border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+    border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+    margin-top      : -1rem;
+    font-size       : 80%;
+    background-color: var(--form-error-color);
+    color           : #EDF2C2;
+    transition      : all 800ms ease;
+    text-align      : center;
+}
+
+.contact-form-error.is-active {
+    display  : block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.contact-form-loader {
+    text-align: center;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes show-message {
+    0% {
+        visibility: hidden;
+        opacity   : 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity   : 1;
+    }
+}
+
 
 /*---FOOTER---*/
 footer {

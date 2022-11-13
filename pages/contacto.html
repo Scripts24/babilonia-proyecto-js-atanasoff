@@ -54,16 +54,30 @@
     <!-- Fin encabezado con logo y navbar Bootstrap-->
     <!-- Inicio contenido principal-->
     <main>
-        <!--Formulario contacto - glassmorphism-->
+        <!--Formulario contacto - glassmorphism- expresiones regulares-->
         <section class="contacto">
             <h1>CONTÁCTANOS</h1>
-            <form>
-                <input name="name" type="text" class="feedback-input" placeholder="Nombre y apellido" required />
-                <input name="email" type="text" class="feedback-input" placeholder="Email" required />
-                <textarea name="text" class="feedback-input" placeholder="Consulta" required></textarea>
-                <input type="submit" value="Enviar" />
-                <input type="reset" value="Borrar" />
-            </form>
+            <div class="contenedor-form">
+                <form class="contact-form">
+                    <input name="name" type="text" placeholder="Nombre y apellido"
+                        title="El nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                        required />
+                    <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+                        pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                    <input type="text" name="subject" placeholder="Asunto" title="El Asunto es requerido" required>
+                    <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
+                        title="Tu comentario no debe exceder los 255 caracteres" data-pattern="^.{1,255}$"
+                        required></textarea>
+                    <input type="submit" value="Enviar" />
+                    <input type="reset" value="Borrar" />
+                </form>
+                <div class="contact-form-loader none">
+                    <img src="../img/loader.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response none">
+                    <p>Tu consulta ha sido enviada</p>
+                </div>
+            </div>
         </section>
     </main>
     <!-- Fin contenido principal-->
@@ -101,6 +115,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="../js/contacto.js"></script>
 </body>
 
 </html>
