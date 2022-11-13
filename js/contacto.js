@@ -3,50 +3,50 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function contact_form_validations() {
-    const $form = document.querySelector(".contact-form"),
-        $inputs = document.querySelectorAll(".contact-form [required]");
-    console.log($inputs)
+    const form = document.querySelector(".contact-form"),
+        inputs = document.querySelectorAll(".contact-form [required]");
+    console.log(inputs)
 
     //Mensaje de error 
-    $inputs.forEach((input) => {
-        const $span = document.createElement("span");
-        $span.id = input.name;
-        $span.textContent = input.title;
-        $span.classList.add("contact-form-error", "none")
-        input.insertAdjacentElement("afterend", $span);
+    inputs.forEach((input) => {
+        const span = document.createElement("span");
+        span.id = input.name;
+        span.textContent = input.title;
+        span.classList.add("contact-form-error", "none")
+        input.insertAdjacentElement("afterend", span);
     });
 
     //Validación inputs - Evento keyup
     document.addEventListener("keyup", (e) => {
         if (e.target.matches('.contact-form [required]')) {
-            let $input = e.target,
-                pattern = $input.pattern || $input.dataset.pattern;
+            let input = e.target,
+                pattern = input.pattern || input.dataset.pattern;
 
             //Si tiene patrón
-            if (pattern && $input.value !== "") {
+            if (pattern && input.value !== "") {
                 let regex = new RegExp(pattern);
-                return !regex.exec($input.value)
-                    ? document.getElementById($input.name).classList.add("is-active")
-                    : document.getElementById($input.name).classList.remove("is-active")
+                return !regex.exec(input.value)
+                    ? document.getElementById(input.name).classList.add("is-active")
+                    : document.getElementById(input.name).classList.remove("is-active")
             }
 
             //Si no tiene patrón
             if (!pattern) {
-                return $input.value === ""
-                    ? document.getElementById($input.name).classList.add("is-active")
-                    : document.getElementById($input.name).classList.remove("is-active")
+                return input.value === ""
+                    ? document.getElementById(input.name).classList.add("is-active")
+                    : document.getElementById(input.name).classList.remove("is-active")
             }
         }
     });
 
-    //Evento submit
+    //Envío de formulario
     document.addEventListener("submit", (e) => {
         e.preventDefault();
         
-        const $loader = document.querySelector(".contact-form-loader"),
-            $response = document.querySelector(".contact-form-response");
+        const loader = document.querySelector(".contact-form-loader"),
+            response = document.querySelector(".contact-form-response");
 
-        $loader.classList.remove("none");
+        loader.classList.remove("none");
 
 
         // ---PETICIÓN FETCH-----
@@ -57,20 +57,20 @@ function contact_form_validations() {
             .then(res => res.ok ? res.json() : Promise.reject(res))
             .then(json => {
                 console.log(json);
-                $loader.classList.add("none");
-                $response.classList.remove("none");
-                $response.innerHTML = `<p>${json.message}</p>`;
-                $form.reset();
+                loader.classList.add("none");
+                response.classList.remove("none");
+                response.innerHTML = `<p>${json.message}</p>`;
+                form.reset();
             })
             .catch(err => {
                 console.log(err);
                 let message = err.statusText || "Error al enviar, intenta nuevamente";
-                $response.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+                response.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
             })
             .finally(() => setTimeout(() => {
-                $response.classList.add("none");
-                $response.innerHTML = "";
-            }, 3000));
+                response.classList.add("none");
+                response.innerHTML = "";
+            }, 4000));
     });
 }
 
