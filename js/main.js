@@ -84,8 +84,8 @@ if (continuar_compra) {
                 text: "Agrega algún producto para continuar con la compra",
                 icon: "error",
                 confirmButtonText: "Aceptar",
-                confirmButtonColor: "#365902",
-                background: "#F4FFA8",
+                confirmButtonColor: "#0D0D0D",
+                background: "#FFFFFF",
             });
         } else {
             location.href = "../compra.html"
@@ -225,8 +225,8 @@ function enviar_compra(e) {
             text: "Debes completar el formulario",
             icon: "error",
             confirmButtonText: "Aceptar",
-            confirmButtonColor: "#365902",
-            background: "#F4FFA8",
+            confirmButtonColor: "#0D0D0D",
+            background: "#FFFFFF",
         })
     } else {
         const btn = document.getElementById('button');

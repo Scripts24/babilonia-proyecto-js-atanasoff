@@ -17,7 +17,7 @@ h6 {
 }
 
 .compra-js {
-    background-color: #EDF2C2;
+    background-color: #FFFFFF;
 }
 
 h1 {
@@ -48,7 +48,7 @@ p {
 
 .titulo-header {
     font-size: 50px;
-    color    : #EDF2C2;
+    color    : #FFFFFF;
 }
 
 .encabezado {
@@ -98,14 +98,14 @@ p {
 .btn-modal {
     border-radius   : 5px;
     background-color: #365902;
-    color           : #EDF2C2;
+    color           : #FFFFFF;
     padding         : 4px;
 }
 
 .btn-modal:hover {
     cursor          : pointer;
     background-color: #76A60F;
-    color           : #EDF2C2;
+    color           : #FFFFFF;
 }
 
 .img-modal {
@@ -139,8 +139,8 @@ p {
     transition : all 1s;
     top        : 3px;
     left       : 3px;
-    border-top : 3px solid #EDF2C2;
-    border-left: 3px solid #EDF2C2;
+    border-top : 3px solid #FFFFFF;
+    border-left: 3px solid #FFFFFF;
 }
 
 .btn::before {
@@ -151,8 +151,8 @@ p {
     transition   : all 1s;
     bottom       : 3px;
     right        : 3px;
-    border-bottom: 3px solid #EDF2C2;
-    border-right : 3px solid #EDF2C2;
+    border-bottom: 3px solid #FFFFFF;
+    border-right : 3px solid #FFFFFF;
 }
 
 .btn:hover::after {
@@ -166,7 +166,7 @@ p {
 }
 
 .nav-link {
-    color      : #EDF2C2 !important;
+    color      : #FFFFFF !important;
     font-size  : 24px;
     font-family: 'EB Garamond', serif;
     font-weight: 700;
@@ -178,8 +178,8 @@ p {
 }
 
 .navbar-light .navbar-toggler {
-    color : #EDF2C2;
-    border: 1px solid #EDF2C2;
+    color : #FFFFFF;
+    border: 1px solid #FFFFFF;
 }
 
 .navbar-toggler:not(.collapsep)::after {
@@ -192,7 +192,7 @@ p {
 
 /*.....MAIN.....*/
 main {
-    background-color: #EDF2C2;
+    background-color: #FFFFFF;
 }
 
 /*.....INDEX.....*/
@@ -251,7 +251,7 @@ main {
 }
 
 .slider-btn:hover {
-    background: #fff;
+    background: #FFFFFF;
 }
 
 .slider-btn-left {
@@ -266,7 +266,7 @@ main {
     position  : absolute;
     top       : 50%;
     left      : 50%;
-    color     : white;
+    color     : #FFFFFF;
     transform : translate(-50%, -50%);
     width     : 60%;
     text-align: center;
@@ -291,7 +291,7 @@ main {
 
 .btn-tienda:hover {
     background: #ECF23D;
-    color     : white;
+    color     : #FFFFFF;
 }
 
 .slider-titulo {
@@ -341,7 +341,7 @@ img {
     position   : relative;
     bottom     : 70px;
     background : rgb(27, 27, 27, .5);
-    color      : #EDF2C2;
+    color      : #FFFFFF;
     transition : .7s;
 }
 
@@ -379,7 +379,7 @@ h3 {
 
 .carrito {
     margin-left: 10px;
-    color      : #EDF2C2;
+    color      : #FFFFFF;
     font-size  : 30px;
 }
 
@@ -447,7 +447,7 @@ h3 {
 
 .producto .box-container .box .btn-carrito {
     background     : #365902;
-    color          : #EDF2C2;
+    color          : #FFFFFF;
     font-size      : 24px;
     font-family    : 'EB Garamond', serif;
     font-style     : italic;
@@ -480,7 +480,7 @@ h3 {
     margin         : 20px 0;
     width          : 300px;
     height         : 400px;
-    background     : #EDF2C2;
+    background     : #FFFFFF;
     transform-style: preserve-3d;
     transform      : perspective(2000px);
     transition     : 1s;
@@ -546,7 +546,7 @@ h3 {
 
 .contacto h1 {
     padding-top: 30px;
-    color      : #EDF2C2;
+    color      : #FFFFFF;
 }
 
 .contenedor-form {
@@ -554,7 +554,7 @@ h3 {
 }
 
 .contact-form {
-    --form-ok-color   : #4caf50;
+    --form-ok-color   : #365902;
     --form-error-color: #f44336;
     margin-left       : auto;
     margin-right      : auto;
@@ -562,7 +562,7 @@ h3 {
 }
 
 .contact-form>* {
-    padding                : 0.5rem;
+    padding                : 8px;
     margin                 : 1rem auto;
     display                : block;
     width                  : 100%;
@@ -586,17 +586,17 @@ h3 {
 
 .contact-form-response {
     font-family: 'EB Garamond', serif;
-    font-size  : 1.5rem;
+    font-size  : 24px;
     font-weight: bold;
     text-align : center;
-    color      : #EDF2C2;
+    color      : #FFFFFF;
 }
 
 .contact-form input,
 .contact-form textarea {
-    font-size  : 1rem;
+    font-size  : 16px;
     font-family: 'EB Garamond', serif;
-    color      : #EDF2C2;
+    color      : #FFFFFF;
 }
 
 .contact-form input[type="submit"],
@@ -604,7 +604,7 @@ h3 {
     width      : 50%;
     font-weight: bold;
     font-family: 'EB Garamond', serif;
-    color      : #EDF2C2;
+    color      : #FFFFFF;
     cursor     : pointer;
 }
 
@@ -614,11 +614,11 @@ h3 {
 }
 
 .contact-form *::placeholder {
-    color: #EDF2C2;
+    color: #FFFFFF;
 }
 
 .contact-form [required]:valid {
-    border: thin solid var(--form-ok-color);
+    border: solid var(--form-ok-color);
 }
 
 .contact-form [required]:invalid {
@@ -626,10 +626,10 @@ h3 {
 }
 
 .contact-form-error {
-    margin-top      : -1rem;
+    margin-top      : -16px;
     font-size       : 80%;
     background-color: var(--form-error-color);
-    color           : #EDF2C2;
+    color           : #FFFFFF;
     transition      : all 800ms ease;
     text-align      : center;
 }
@@ -659,6 +659,65 @@ h3 {
     }
 }
 
+/*.....Newsletter.....*/
+.container-news {
+    padding-bottom: 50px;
+}
+
+.container-news h2 {
+    color: #FFFFFF;
+}
+
+.container-news p {
+    max-width  : 600px;
+    margin     : 20px auto;
+    font-size  : 20px;
+    font-weight: 300;
+    font-family: 'EB Garamond', serif;
+    color      : #FFFFFF;
+    text-align : center;
+}
+
+.email-box {
+    height         : 40px;
+    justify-content: center;
+    display        : flex;
+}
+
+.email-box i {
+    background  : #2f3542;
+    width       : 40px;
+    line-height : 40px;
+    color       : #FFFFFF;
+    padding-left: 10px;
+}
+
+.tbox,
+.bttn {
+    border : none;
+    outline: none;
+}
+
+.tbox {
+    width     : 0px;
+    transition: 0.9s;
+}
+
+.email-box:hover>.tbox,
+.tbox:focus {
+    width  : 260px;
+    padding: 0 10px;
+}
+
+.bttn {
+    background    : #2f3542;
+    color         : #FFFFFF;
+    padding       : 0 10px;
+    text-transform: uppercase;
+    cursor        : pointer;
+    font-family   : 'EB Garamond', serif;
+}
+
 
 /*---FOOTER---*/
 footer {
@@ -682,7 +741,7 @@ footer div ul li {
 footer div ul li a {
     width           : 50px;
     height          : 50px;
-    background-color: #EDF2C2;
+    background-color: #FFFFFF;
     text-align      : center;
     line-height     : 40px;
     font-size       : 30px;
@@ -691,7 +750,7 @@ footer div ul li a {
     border-radius   : 50%;
     position        : relative;
     overflow        : hidden;
-    border          : 3px solid #EDF2C2;
+    border          : 3px solid #FFFFFF;
     z-index         : 1;
 }
 
@@ -703,7 +762,7 @@ footer ul li a .icon {
 }
 
 footer ul li a:hover .icon {
-    color    : #EDF2C2;
+    color    : #FFFFFF;
     transform: rotateY(360deg);
 }
 
@@ -740,7 +799,7 @@ footer ul li:nth-child(4) a:before {
 }
 
 footer p {
-    color     : #EDF2C2;
+    color     : #FFFFFF;
     margin    : 10px 0 10px 0;
     text-align: center;
     font-size : 24px;
@@ -825,6 +884,18 @@ footer .powered {
 
     .producto h2 {
         font-size: 50px;
+    }
+}
+
+@media screen and (max-width:475px) {
+    .img-modal {
+        width : 90px;
+        height: 60px;
+    }
+
+    .email-box:hover>.tbox,
+    .tbox:focus {
+        width  : 180px;
     }
 }
 
