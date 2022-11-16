@@ -231,7 +231,7 @@ function enviar_compra(e) {
     } else {
         const btn = document.getElementById('button');
 
-        btn.value = 'Finalizado';
+        btn.value = 'Compra confirmada';
 
         const spinner = document.querySelector('#spinner')
         spinner.classList.add('d-flex')
@@ -242,16 +242,16 @@ function enviar_compra(e) {
             spinner.classList.add('d-none')
             formulario.reset()
 
-            const alert_exito = document.createElement('p')
-            alert_exito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
-            alert_exito.textContent = 'Compra realizada correctamente, en breve recibirás tu pedido'
-            formulario.appendChild(alert_exito)
+            Swal.fire({
+                icon: 'success',
+                title: '¡Gracias por tu compra!',
+                text: 'En breve nos pondremos en contacto para coordinar la entrega en tu domicilio',
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#0D0D0D",
+                background: "#FFFFFF",
+            });
 
-            setTimeout(() => {
-                alert_exito.remove()
-            }, 6000)
-
-        }, 6000)
+        }, 5000)
     }
     localStorage.clear()
 }
