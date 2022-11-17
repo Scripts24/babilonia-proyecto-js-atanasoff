@@ -197,17 +197,17 @@ main {
 
 /*.....INDEX.....*/
 /* Clima */
-#contenedor {
+#contenedor-clima {
     display         : flex;
     justify-content : center;
     align-items     : center;
     background-color: #172601;
-    border-bottom  : 0.5px solid rgba(255, 255, 255, 0.18);
+    border-bottom   : 0.5px solid rgba(255, 255, 255, 0.18);
     padding-top     : 3px;
     padding-bottom  : 3px;
 }
 
-#contenedor h6 {
+#contenedor-clima h6 {
     font-family: 'EB Garamond', serif;
     font-size  : 12px;
 }
@@ -451,7 +451,7 @@ h3 {
 
 .producto .box-container .box {
     width        : 300px;
-    height       : 480px;
+    height       : 430px;
     border       : 3px solid #172601;
     border-radius: 5px;
     text-align   : center;
@@ -461,7 +461,7 @@ h3 {
 }
 
 .producto .box-container .box img {
-    height       : 250px;
+    height       : 230px;
     width        : 100%;
     border-bottom: 2px solid #172601;
     object-fit   : cover;
@@ -495,10 +495,11 @@ h3 {
     color          : #FFFFFF;
     font-size      : 24px;
     font-family    : 'EB Garamond', serif;
-    font-style     : italic;
     text-decoration: none;
+    font-style: italic;
     border         : 2px solid #172601;
     border-radius  : 5px;
+    padding        : 10px;
 }
 
 .producto .box-container .box .btn-carrito:hover {

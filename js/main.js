@@ -44,6 +44,7 @@ const carrito_contenedor = document.querySelector("#carrito-contenedor");
 const vaciar_carrito = document.querySelector("#vaciar-carrito");
 const valor_total = document.querySelector("#valor-total");
 
+
 //Compra
 const continuar_compra = document.querySelector("#continuar-compra");
 const activar_procesar_compra = document.querySelector("#activar-procesar-compra");
@@ -104,9 +105,8 @@ catalogo.forEach((prod) => {
     <h3>${nombre}</h3>
     <div>
     <p class="precio">Precio: $ ${precio}</p>
-    <button class="btn-carrito" onclick="agregar_producto(${id})">Agregar al carrito</button>
-    <br> <br>
-    <a class="btn-carrito" href="#top">Ir al carrito</a>
+    <button class="btn-carrito"  onclick="agregar_producto(${id})">Agregar al carrito </button>
+    <a class="btn-carrito" href="#top"><i class="fa-sharp fa-solid fa-up-long"></i></i></a>
     </div>
     </div> 
     `
@@ -117,6 +117,13 @@ catalogo.forEach((prod) => {
 // Función para agregar productos al carrito
 function agregar_producto(id) {
     const existe = carrito.some(prod => prod.id === id)
+    
+    Swal.fire({
+        title: "¡Producto agregado ✔!",
+        showConfirmButton: false,
+        timer:3000,
+        background: "#F2DA91",
+    })
 
     if (existe) {
         const prod = carrito.map(prod => {
@@ -130,6 +137,8 @@ function agregar_producto(id) {
     }
     mostrar_carrito()
 }
+
+
 
 //Muestro en el Modal los productos agregados con la opción de eliminar
 const mostrar_carrito = () => {
