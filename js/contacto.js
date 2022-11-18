@@ -42,14 +42,14 @@ function contact_form_validations() {
     //Envío de formulario
     document.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+
         const loader = document.querySelector(".contact-form-loader"),
             response = document.querySelector(".contact-form-response");
 
         loader.classList.remove("none");
 
 
-        // ---PETICIÓN FETCH-----
+        // ---FETCH-----
         fetch("https://formsubmit.co/ajax/pato.atanasoff0815@gmail.com", {
             method: "POST",
             body: new FormData(e.target)
@@ -70,7 +70,7 @@ function contact_form_validations() {
             .finally(() => setTimeout(() => {
                 response.classList.add("none");
                 response.innerHTML = "";
-            }, 4000));
+            }, 3000));
     });
 }
 

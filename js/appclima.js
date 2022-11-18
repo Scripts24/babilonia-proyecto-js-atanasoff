@@ -16,10 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {
             //console.log(posicion.coords.latitude)
             lon = posicion.coords.longitude
             lat = posicion.coords.latitude
-            //ubicación actual    
-            //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${AQUI_VIENE_TU_API_KEY}`
 
-            //ubicación por ciudad
+            //Ubicación actual    
+            //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=19fa80fb8a2d5dddcc9f334c0db14f16`
+
+
+            //Ubicación por ciudad
             const url = `https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&lang=es&units=metric&appid=19fa80fb8a2d5dddcc9f334c0db14f16`
 
             //console.log(url)
@@ -40,12 +42,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     viento_velocidad.textContent = `${data.wind.speed} m/s`
 
-                    //para iconos estáticos
+                    //Para iconos estáticos-deshabilitado
                     //const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`                     
                     //icono.src = urlIcon
                     //console.log(data.weather[0].icon)
 
-                    //para iconos dinámicos
+                    //Íconos dinámicos
                     console.log(data.weather[0].main)
                     switch (data.weather[0].main) {
                         case 'Thunderstorm':

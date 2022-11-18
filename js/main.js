@@ -102,7 +102,7 @@ catalogo.forEach((prod) => {
         contenedor.innerHTML += `
     <div class="box">
     <img  src="${img}">
-    <h3>${nombre}</h3>
+    <h3 >${nombre}</h3>
     <div>
     <p class="precio">Precio: $ ${precio}</p>
     <button class="btn-carrito"  onclick="agregar_producto(${id})">Agregar al carrito </button>
@@ -117,12 +117,12 @@ catalogo.forEach((prod) => {
 // Función para agregar productos al carrito
 function agregar_producto(id) {
     const existe = carrito.some(prod => prod.id === id)
-    
+
     Swal.fire({
         title: "¡Producto agregado ✔!",
         showConfirmButton: false,
-        timer:3000,
-        background: "#F2DA91",
+        timer: 2000,
+        background: "#F2E7DC",
     })
 
     if (existe) {
@@ -137,7 +137,6 @@ function agregar_producto(id) {
     }
     mostrar_carrito()
 }
-
 
 
 //Muestro en el Modal los productos agregados con la opción de eliminar
