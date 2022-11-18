@@ -1,5 +1,5 @@
 <h1 align="center">Babilonia Deco Natural</h1>
-<h3 align="center">Venta de plantas y accesorios par decoración</h3>
+<h3 align="center">Venta de plantas y accesorios para decoración</h3>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
