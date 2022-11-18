@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     let lon
     let lat
 
@@ -42,10 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     viento_velocidad.textContent = `${data.wind.speed} m/s`
 
-                    //Para iconos estáticos-deshabilitado
-                    //const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`                     
-                    //icono.src = urlIcon
-                    //console.log(data.weather[0].icon)
 
                     //Íconos dinámicos
                     console.log(data.weather[0].main)
