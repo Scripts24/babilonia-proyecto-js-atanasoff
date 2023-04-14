@@ -851,10 +851,11 @@ footer p {
     font-size : 24px;
 }
 
-footer .powered {
+footer .developed {
     width        : 200px;
     height       : 60px;
     border-radius: 15px;
+    border: 2px solid #FFFFFF;
 }
 
 /*---MEDIA QUERIES---*/
