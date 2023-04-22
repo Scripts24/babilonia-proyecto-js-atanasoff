@@ -457,7 +457,7 @@ h3 {
     text-align   : center;
     position     : relative;
     overflow     : hidden;
-    background   : #c8e9989a;
+    background   : #172601;
 }
 
 .producto .box-container .box img {
@@ -473,7 +473,7 @@ h3 {
 }
 
 .producto .box-container .box h3 {
-    color    : #365902;
+    color    : #FFFFFF;
     font-size: 35px;
 }
 
@@ -486,18 +486,18 @@ h3 {
 
 .producto .box-container .box .precio {
     font-weight: bold;
-    color      : #172601;
+    color      : #FFFFFF;
     font-size  : 24px;
 }
 
 .producto .box-container .box .btn-carrito {
-    background     : #365902;
+    background     : #172601;
     color          : #FFFFFF;
     font-size      : 24px;
     font-family    : 'EB Garamond', serif;
     text-decoration: none;
     font-style     : italic;
-    border         : 2px solid #172601;
+    border         : 2px solid #FFFFFF;
     border-radius  : 5px;
     padding        : 10px;
 }
