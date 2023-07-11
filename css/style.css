@@ -54,25 +54,29 @@ p {
     align-items:center;
     margin:10px 20px;
   }
-  @keyframes load{
+
+  @keyframes load6{
     50%{
-      transform:rotatez(180deg) scale(0.2);
-      border-color:orange;
+      transform:rotatez(180deg);
+      border-width:40px;
     }
     100%{
-      transform:rotatez(360deg) scale(1.1);
+      transform:rotatez(360deg);
     }
   }
-  .loader1::before{
+  .loader6::before{
     content:"";
     color:white;
-    height:30px;
-    width:30px;
+    height:0px;
+    width:0px;
     background:transparent;
-    border-radius:45%;
-    border:25px dotted lime;
-    animation:load 1s infinite ease-in-out;
+    border-radius:50%;
+    border:35px ridge red;
+    border-color:indigo lime yellow orangered;
+    animation:load6 .5s infinite;
   }
+
+  
 
 /* DARKMODE */
 
