@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
 
 * {
-    margin    : 0;
-    padding   : 0;
-    box-sizing: border-box;
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    outline        : none;
+    text-decoration: none;
+    list-style     : none;
 }
 
 body h1,
@@ -14,10 +17,6 @@ h5,
 h6 {
     font-family: 'Dancing Script', cursive, serif;
     font-weight: 700;
-}
-
-.compra-js {
-    background-color: #FFFFFF;
 }
 
 h1 {
@@ -34,7 +33,102 @@ p {
     font-family: 'EB Garamond', serif;
 }
 
+/* DARKMODE */
+
+.contenedor-switch {
+    background-color: #172601;
+    border-bottom   : 0.5px solid rgba(255, 255, 255, 0.18);
+    display         : flex;
+    align-items     : center;
+    justify-content : flex-end;
+    padding-top     : 20px;
+    padding-bottom  : 20px;
+    padding-right   : 25px;
+    gap             : 20px;
+}
+
+.switch {
+    width           : 60px;
+    height          : 30px;
+    padding         : 0 5px;
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    position        : relative;
+    border-radius   : 100px;
+    background-color: #fff;
+}
+
+.switch i {
+    font-size: 1.2rem;
+    color    : #fdc21c;
+}
+
+.switch .bi-moon-fill {
+    color: #000;
+}
+
+.switch::before {
+    content         : "";
+    position        : absolute;
+    height          : 30px;
+    width           : 30px;
+    border-radius   : 50%;
+    background-color: #172601fa;
+    left            : 0;
+    right           : unset;
+    cursor          : pointer;
+}
+
+.switch.active::before {
+    right : 0;
+    left  : unset;
+    border: solid thin black;
+}
+
+body.active main {
+    background-color: black;
+}
+
+body.active .muestras {
+    color: #fff;
+}
+
+body.active .producto h2 {
+    color: #fff;
+}
+
+body.active .nosotros h1 {
+    color: #fff;
+}
+
+body.active .mapa h2 {
+    color: #fff;
+}
+
+body.active .container h2,
+label {
+    color: #fff;
+}
+
+body.active .table {
+    color: #fff;
+}
+
+body.active .total-compra {
+    color: #fff;
+}
+
+body.active .forma-pago {
+    color: #fff;
+}
+
+body.active {
+    background-color: #000;
+}
+
 /*.....HEADER.....*/
+
 /*.....Modificación estilos navbar y modal Bootstrap.....*/
 
 .navbar {
@@ -190,21 +284,23 @@ p {
     box-shadow: inherit;
 }
 
-/*.....MAIN.....*/
-main {
-    background-color: #FFFFFF;
-}
 
 /*.....INDEX.....*/
+
 /* Clima */
-#contenedor-clima {
+
+.contenedor-clima-darkmode {
     display         : flex;
-    justify-content : center;
+    justify-content : space-around;
     align-items     : center;
     background-color: #172601;
     border-bottom   : 0.5px solid rgba(255, 255, 255, 0.18);
-    padding-top     : 3px;
-    padding-bottom  : 3px;
+}
+
+#contenedor-clima {
+    display       : flex;
+    padding-top   : 3px;
+    padding-bottom: 3px;
 }
 
 #contenedor-clima h6 {
@@ -401,7 +497,6 @@ h3 {
     text-align : center;
     visibility : hidden;
     opacity    : 0;
-
 }
 
 .cards-muestras:hover {
@@ -423,9 +518,8 @@ h3 {
 /*.....TIENDA.....*/
 
 .carrito {
-    margin-left: 10px;
-    color      : #FFFFFF;
-    font-size  : 30px;
+    color    : #FFFFFF;
+    font-size: 30px;
 }
 
 .carrito:hover {
@@ -855,7 +949,7 @@ footer .developed {
     width        : 200px;
     height       : 60px;
     border-radius: 15px;
-    border: 2px solid #FFFFFF;
+    border       : 2px solid #FFFFFF;
 }
 
 /*---MEDIA QUERIES---*/
@@ -932,6 +1026,25 @@ footer .developed {
     .producto h2 {
         font-size: 50px;
     }
+
+    .carrito {
+        font-size: 20px;
+    }
+
+    .switch {
+        width : 50px;
+        height: 25px;
+    }
+
+    .switch i {
+        font-size: 20px;
+    }
+
+    .switch::before {
+        height: 25px;
+        width : 25px;
+    }
+
 }
 
 @media screen and (max-width:475px) {
@@ -950,11 +1063,6 @@ footer .developed {
     .encabezado .logo {
         width : 60px;
         height: 50px;
-    }
-
-    .carrito {
-        font-size: 20px;
-        padding  : 10px 0px;
     }
 
     .encabezado .titulo-header {
@@ -1001,10 +1109,4 @@ footer .developed {
         font-size: 20px;
     }
 
-}
-
-@media screen and (max-width:375px) {
-    .carrito {
-        font-size: 16px;
-    }
 }

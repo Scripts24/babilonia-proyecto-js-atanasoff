@@ -8,6 +8,8 @@
     <title>Babilonia - Deco Natural</title>
     <!--FAVICON-->
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!--Font-awesome-->
     <script src="https://kit.fontawesome.com/cd2f965cc2.js" crossorigin="anonymous"></script>
     <!-- Link Bootstrap-->
@@ -20,19 +22,26 @@
 </head>
 
 <body>
-    <!--Clima-->
-    <div id="contenedor-clima">
-        <div id="caja1">
-            <h6 id="temperatura-valor"></h6>
-            <h6 id="temperatura-descripcion"></h6>
+    <div class="contenedor-clima-darkmode">
+        <!--Clima-->
+        <div id="contenedor-clima">
+            <div id="caja1">
+                <h6 id="temperatura-valor"></h6>
+                <h6 id="temperatura-descripcion"></h6>
+            </div>
+            <div id="caja2">
+                <h6 id="ubicacion"></h6>
+                <img id="icono-animado" src="" alt="">
+            </div>
+            <div id="caja3">
+                <h6>Viento</h6>
+                <h6 id="viento-velocidad"></h6>
+            </div>
         </div>
-        <div id="caja2">
-            <h6 id="ubicacion"></h6>
-            <img id="icono-animado" src="" alt="">
-        </div>
-        <div id="caja3">
-            <h6>Viento</h6>
-            <h6 id="viento-velocidad"></h6>
+        <!--Darkmode-->
+        <div class="switch">
+            <i class="bi bi-moon-fill"></i>
+            <i class="bi bi-sun-fill"></i>
         </div>
     </div>
     <!-- Inicio encabezado con logo y navbar Bootstrap  -->
@@ -44,6 +53,7 @@
                             alt="logo del sitio"></a>
                     <h1 class="titulo-header">Babilonia</h1>
                 </div>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -205,6 +215,7 @@
             duration: 1000,
         });
     </script>
+    <script src="./js/darkmode.js"></script>
     <!-- Api clima -->
     <script src="./js/appclima.js"></script>
     <!-- Script slider -->

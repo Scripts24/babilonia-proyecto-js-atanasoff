@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Continuar compra</title>
+  <!--FAVICON-->
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <!--Bootstrap Icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!--Font-awesome-->
   <script src="https://kit.fontawesome.com/cd2f965cc2.js" crossorigin="anonymous"></script>
   <!-- Link Bootstrap-->
@@ -18,18 +22,26 @@
 </head>
 
 <body class="compra-js">
+  <!--Darkmode-Cart-->
+  <div class="contenedor-switch">
+    <div>
+      <a class="text-white" href="./pages/tienda.html"><i class="fa-sharp fa-solid fa-rotate-left carrito"></i></a>
+    </div>
+    <a data-bs-toggle="modal" data-bs-target="#modal"><i class="fas fa-shopping-cart carrito"
+        id="carrito-contenedor">0</i></a>
+    <div class="switch">
+      <i class="bi bi-moon-fill"></i>
+      <i class="bi bi-sun-fill"></i>
+    </div>
+  </div>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <div class="encabezado">
           <a class="navbar-brand" href=""><img class="logo" id="top" src="../img/logo.png" alt="logo del sitio"></a>
           <h1 class="titulo-header">Babilonia</h1>
-          <a data-bs-toggle="modal" data-bs-target="#modal"><i class="fas fa-shopping-cart carrito"
-              id="carrito-contenedor">0</i></a>
         </div>
-        <div>
-          <a class="text-white" href="./pages/tienda.html"><i class="fa-sharp fa-solid fa-rotate-left carrito"></i></a>
-        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -99,7 +111,7 @@
                   title="Email incorrecto"
                   pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
               </div><br><br>
-              <div>
+              <div class="forma-pago">
                 <input type="Radio" name="typeBuy" value="Efectivo/Transferencia" checked>
                 Efectivo/Transferencia
                 <input type="Radio" name="typeBuy" value="En cuotas"> En cuotas
@@ -163,6 +175,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Script carrito -->
   <script src="./js/main.js"></script>
+  <script src="./js/darkmode.js"></script>
 </body>
 
 </html>
