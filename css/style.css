@@ -215,6 +215,17 @@ body.active {
     font-family: 'EB Garamond', serif;
 }
 
+/*Clase "custom-btn" para el botón que aparece al confirmar compra*/
+.custom-btn {
+    color     : #fff;
+    margin-top: 15px;
+}
+
+.custom-btn:hover {
+    color           : #fff;
+    background-color: #365902;
+}
+
 .btn {
     cursor                   : pointer;
     position                 : relative;

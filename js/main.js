@@ -1,3 +1,5 @@
+
+
 const catalogo = [
     {
         id: 1, nombre: "Potus", precio: 810, cantidad: 1, img: "../img/potus.jpg",
@@ -106,7 +108,7 @@ catalogo.forEach((prod) => {
     <div>
     <p class="precio">Precio: $ ${precio}</p>
     <button class="btn-carrito"  onclick="agregar_producto(${id})">Agregar al carrito </button>
-    <a class="btn-carrito" href="#top"><i class="fa-sharp fa-solid fa-up-long"></i></i></a>
+    <a class="btn-carrito" href="#carrito-contenedor"><i class="fa-sharp fa-solid fa-up-long"></i></i></a>
     </div>
     </div> 
     `
@@ -223,9 +225,9 @@ function procesar_compra() {
 }
 
 function enviar_compra(e) {
-    e.preventDefault()
-    const cliente = document.querySelector('#cliente').value
-    const email = document.querySelector('#correo').value
+    e.preventDefault();
+    const cliente = document.querySelector('#cliente').value;
+    const email = document.querySelector('#correo').value;
 
     if (email === '' || cliente === '') {
         Swal.fire({
@@ -235,20 +237,21 @@ function enviar_compra(e) {
             confirmButtonText: "Aceptar",
             confirmButtonColor: "#0D0D0D",
             background: "#FFFFFF",
-        })
+        });
     } else {
         const btn = document.getElementById('button');
 
         btn.value = 'Compra confirmada';
+        btn.disabled = true;
 
-        const spinner = document.querySelector('#spinner')
-        spinner.classList.add('d-flex')
-        spinner.classList.remove('d-none')
+        const spinner = document.querySelector('#spinner');
+        spinner.classList.add('d-flex');
+        spinner.classList.remove('d-none');
 
         setTimeout(() => {
-            spinner.classList.remove('d-flex')
-            spinner.classList.add('d-none')
-            formulario.reset()
+            spinner.classList.remove('d-flex');
+            spinner.classList.add('d-none');
+            formulario.reset();
 
             Swal.fire({
                 icon: 'success',
@@ -259,10 +262,50 @@ function enviar_compra(e) {
                 background: "#FFFFFF",
             });
 
-        }, 5000)
+            localStorage.clear();
+            localStorage.setItem('contadorCarrito', 0);
+
+            const elementoContador = document.querySelector('#carrito-contenedor');
+            if (elementoContador) {
+                elementoContador.innerText = '0';
+            }
+
+            const total_compra = document.querySelector('#total-compra');
+            if (total_compra) {
+                total_compra.innerText = '0';
+            }
+
+            const lista_compra = document.querySelector("#lista-compra tbody");
+            if (lista_compra) {
+                lista_compra.innerHTML = '';
+            }
+
+            // Agregar botón "Volver al inicio"
+            const volverBtn = document.createElement('button');
+            volverBtn.textContent = 'Volver al inicio';
+            volverBtn.classList.add('btn'); // Agregar la clase "btn"
+            volverBtn.classList.add('custom-btn'); // Agregar una clase personalizada para el botón
+            volverBtn.addEventListener('click', (e) => {
+                e.stopPropagation();// Detener la propagación del evento de click
+                // Redireccionar al inicio de la página
+                window.location.href = 'index.html';
+            });
+
+            // Insertar el botón debajo del botón "Compra confirmada"
+            const btnContainer = btn.parentNode;
+            btnContainer.insertBefore(volverBtn, btn.nextSibling);
+
+        }, 2000);
     }
-    localStorage.clear()
 }
+
+
+
+
+
+
+
+
 
 
 
