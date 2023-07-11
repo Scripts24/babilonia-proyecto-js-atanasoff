@@ -33,6 +33,47 @@ p {
     font-family: 'EB Garamond', serif;
 }
 
+#preloader {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: black;
+    z-index         : 9999;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.loader{
+    width:100px;
+    height:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 20px;
+  }
+  @keyframes load{
+    50%{
+      transform:rotatez(180deg) scale(0.2);
+      border-color:orange;
+    }
+    100%{
+      transform:rotatez(360deg) scale(1.1);
+    }
+  }
+  .loader1::before{
+    content:"";
+    color:white;
+    height:30px;
+    width:30px;
+    background:transparent;
+    border-radius:45%;
+    border:25px dotted lime;
+    animation:load 1s infinite ease-in-out;
+  }
+
 /* DARKMODE */
 
 .contenedor-switch {
